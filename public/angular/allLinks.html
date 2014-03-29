@@ -1,3 +1,6 @@
 <ul>
-  <li ng-repeat="link in links">{{ link.title }}</li>
+  <li ng-repeat="link in links"> 
+    visits: {{ link.visits }} {{ link.title }} </br> 
+    <a href={{link.code}}> {{ link.code }} </a>
+  </li>
 </ul>
