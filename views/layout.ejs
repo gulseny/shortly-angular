@@ -24,7 +24,8 @@
     <title>Shortly</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="/lib/angular.js"></script>
-    <script src="main.js"></script>
+    <script src="/lib/angular-route.js"></script>
+    <script src="/angular/main.js"></script>
   </head>
   <body ng-app='ShortlyApp'>
     <h1>Shortly</h1>
@@ -32,8 +33,13 @@
       {{ person.name }}
       <button ng-click="getLinks()"> GET LINKS </button>
       <ul>
-        <li></li>
+        <li ng-repeat="link in links">{{ link.title }}</li>
       </ul>
+      <button ng-click="showCreate()"> Show Create View </button>
+    </div>
+
+    <div ng-controller="ShortenController">
+      <div ng-view></div>
     </div>
   </body>
 </html>
