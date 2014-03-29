@@ -3,4 +3,5 @@
   <input ng-click="shortenLink()" type='submit' value='Shorten'>
 </form>
 <!-- <img class='spinner' src='/spiffygif_46x46.gif'> -->
-<div class='message'></div>
+{{ newLink.title }}
+<div ng-hide="validUrl" class='message'>Please enter a valid URL!</div>
