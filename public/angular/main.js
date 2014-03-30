@@ -19,11 +19,7 @@ angular.module('ShortlyApp', ['ngRoute'])
 
 // main controller for getting links
 .controller('MainController', function($scope, $http){
-  console.log("i'm created!");
-  $scope.person = {
-    name: 'test'
-  };
-
+  console.log('is mainController executed?');
   $scope.getLinks = function () {
     var promise = $http({
       method: 'GET',
@@ -39,6 +35,7 @@ angular.module('ShortlyApp', ['ngRoute'])
 
 // controller for shortening and posting links
 .controller('ShortenController', function($scope, $http) {
+  console.log('is shortenController executed?');
   $scope.validUrl = true;
 
   var rValidUrl = /^(?!mailto:)(?:(?:https?|ftp):\/\/)?(?:\S+(?::\S*)?@)?(?:(?:(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[0-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))|localhost)(?::\d{2,5})?(?:\/[^\s]*)?$/i;
